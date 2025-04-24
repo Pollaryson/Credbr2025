@@ -1,41 +1,91 @@
-# Ignore Flax project files
-Binaries/
-Cache/
-Logs/
-Output/
-Screenshots/
-*.HotReload.*
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créd Fácil Brasil</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; }
+    header { background-color: #003366; color: white; padding: 20px; text-align: center; }
+    .logo { font-size: 24px; font-weight: bold; }
+    .container { max-width: 600px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    h1 { color: #003366; font-size: 22px; }
+    p { font-size: 16px; }
+    .simulador { margin: 20px 0; }
+    input, select, button { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    .urgencia { background-color: #ffdddd; padding: 15px; margin: 20px 0; text-align: center; font-weight: bold; border-left: 5px solid red; }
+    .depoimentos { background-color: #f0f8ff; padding: 15px; margin: 20px 0; border-radius: 5px; }
+    .depoimentos p { font-style: italic; }
+    .aprovado { display: none; text-align: center; padding: 40px; }
+    .aprovado h2 { color: green; }
+    .qr-code { text-align: center; margin-top: 40px; }
+    footer { text-align: center; font-size: 12px; color: gray; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Crédito Fácil Brasil</div>
+    <div>Solução rápida para quem mais precisa</div>
+  </header>
 
-# Ignore Visual Studio project files (generated locally)
-*.csproj
-*.sln
+  <div class="container" id="formulario">
+    <h1>Seu crédito foi aprovado!</h1>
+    <p>Mesmo com nome sujo ou score baixo, agora você pode contratar até R$ 20.000 com depósito imediato!</p>
 
-# Ignore thumbnails created by Windows
-Thumbs.db
+    <div class="simulador">
+      <label for="valor">Escolha o valor desejado:</label>
+      <select id="valor">
+        <option>R$ 1.000</option>
+        <option>R$ 5.000</option>
+        <option>R$ 10.000</option>
+        <option>R$ 20.000</option>
+      </select>
 
-# Ignore files built by Visual Studio
-*.obj
-*.exe
-*.pdb
-*.user
-*.aps
-*.pch
-*.vspscc
-*_i.c
-*_p.c
-*.ncb
-*.suo
-*.tlb
-*.tlh
-*.bak
-*.cache
-*.ilk
-*.log
-[Bb]in
-[Dd]ebug*/
-*.lib
-*.sbr
-obj/
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome">
+
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" placeholder="000.000.000-00">
+
+      <button onclick="mostrarAprovado()">Solicitar Crédito</button>
+    </div>
+
+    <div class="urgencia">
+      Restam apenas 12 aprovações para hoje. Garanta a sua agora mesmo!
+    </div>
+
+    <div class="depoimentos">
+      <p>"Recebi R$ 5.000 em menos de 1 hora! Obrigado, Crédito Fácil!" – Maria S.</p>
+      <p>"Estava com score 300 e consegui meu empréstimo. Vale a pena!" – João L.</p>
+    </div>
+
+    <p><strong>Para liberar o valor, será necessário pagar uma taxa de R$ 87,90 referente ao contrato bancário.</strong> Após o pagamento, o valor será depositado em até 30 minutos.</p>
+  </div>
+
+  <div class="container aprovado" id="aprovado">
+    <h2>✅ Empréstimo aprovado com sucesso!</h2>
+    <p>Seu contrato está pronto. Para finalizar, realize o pagamento da taxa de R$ 87,90 para ativação e liberação do valor em conta.</p>
+    <p>Você será redirecionado para o pagamento em instantes.</p>
+  </div>
+
+  <div class="qr-code">
+    <p><strong>Acesse esta página escaneando o QR Code:</strong></p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://seu-link-de-exemplo.com" alt="QR Code para acesso">
+  </div>
+
+  <footer>
+    © 2025 Cré Fácil LTDA Brasil. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function mostrarAprovado() {
+      document.getElementById('formulario').style.display = 'none';
+      document.getElementById('aprovado').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
